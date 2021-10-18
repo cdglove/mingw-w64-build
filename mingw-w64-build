@@ -96,7 +96,7 @@ download_sources()
     "https://ftp.gnu.org/gnu/gmp/gmp-$v_gmp.tar.xz"
     "https://ftp.gnu.org/gnu/mpfr/mpfr-$v_mpfr.tar.xz"
     "https://ftp.gnu.org/gnu/mpc/mpc-$v_mpc.tar.gz"
-    "https://sources.buildroot.net/isl/isl-$v_isl.tar.xz"
+    "http://sources.buildroot.net/isl/isl-$v_isl.tar.xz"
   )
 
   for url in "${urls[@]}"; do
