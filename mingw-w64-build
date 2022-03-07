@@ -131,6 +131,16 @@ build_toolchain()
 
   rm -fr "$prefix"
 
+  clean_build "$bld/mingw-w64-tools/widl"
+  echo "configuring widl" >&3
+  "../../../src/mingw-w64-$v_mingww64/mingw-w64-tools/widl/configure" \
+    --build="$build" --target="$host" \
+    --prefix="$prefix" || error_exit
+  echo "running 'make' for widl" >&3
+  make -j $cpus || error_exit
+  echo "running 'install' for widl" >&3
+  make install || error_exit
+
   clean_build "$bld/binutils"
   echo "configuring binutils" >&3
   "../../src/binutils-$v_binutils/configure" --prefix="$prefix" --disable-shared \
